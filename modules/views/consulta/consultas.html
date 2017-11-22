@@ -1,0 +1,64 @@
+<div ng-controller="consultasController as ctrl">
+    <div class="row">
+        <div class="col-md-12">                
+            <div class="card">
+                <menu></menu>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">                
+                <div class="card">
+                    <div class="header">
+                        <a type="submit" ui-sref="consulta-create" class="btn btn-info btn-fill pull-right">Nova consulta</a>
+                    </div>
+                    <div class="header">
+                        <h4 class="title">Consultas</h4>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <div class="content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Buscar</label>
+                                        <input type="text" class="form-control" placeholder="Buscar consulta" ng-model="filter">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <th>Paciente</th>
+                                <th>Dentista</th>
+                                <th>Data</th>
+                                <th>Hora</th>
+                                <th>Retorno</th>
+                                <th>Tipo</th>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="(key, item) in ctrl.arrCons">
+                                    <td>{{ item.pac_idPac }}</td>
+                                    <td>{{ item.Dentista_ID }}</td>
+                                    <td>{{ item.con_data }}</td>
+                                    <td>{{ item.con_hora }}</td>
+                                    <td>{{ item.con_retorno }}</td>
+                                    <td>{{ item.con_tipo }}</td>
+                                    <td>
+                                        <button class="fa-size" style="color: green;font-size:20px" ng-click="ctrl.showConsulta(item.idConsulta)">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        </button>
+                                        <button class="fa-size" style="color: red;font-size:20px" ng-click="ctrl.deletar(item.idConsulta,key)">
+                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

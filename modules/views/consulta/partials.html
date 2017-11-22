@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="dia">Dia</label>
+                <input type="Date" class="form-control" id="dia" ng-model="ctrl.consulta.con_data">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="hora">Hora</label>
+                <input type="text" class="form-control" id="hora" ng-model="ctrl.consulta.con_hora">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="tipo">Tipo da consulta</label>
+            <select class="form-control" placeholder="Tipo" id="tipo" ng-model="ctrl.consulta.con_tipo">
+                <option disabled>Selecione uma consulta</option>
+                <option value="Cirurgia">Cirurgia</option>
+                <option value="Manutencao">Manutenção</option>
+                <option value="Obturacao">Obturação</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="retorno">Retorno</label>
+            <input class="form-control" placeholder="Tipo" id="retorno" ng-model="ctrl.consulta.con_retorno">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="dentista">Dentista</label>
+            <select class="form-control" placeholder="Tipo" id="dentista" ng-model="ctrl.consulta.Dentista_ID">
+                <option ng-value="item.Usuario_idUsuario" ng-repeat="item in ctrl.arrDent">
+                    {{ item.dentist_nome }}
+                </option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="espec">Especialidade</label>
+            <select class="form-control" placeholder="Tipo" id="espec" ng-model="ctrl.consulta.Dentista_Especialidade_ID">
+                <option ng-value="item.idEspecialidade" ng-repeat="item in ctrl.arrEspec">
+                    {{ item.esp_nome }}
+                </option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="pac">Paciente</label>
+            <select class="form-control" id="pac" ng-model="ctrl.consulta.pac_idPac">
+                <option ng-value="item.idPac" ng-repeat="item in ctrl.arrPas">
+                    {{ item.pac_nome }}
+                </option>
+            </select>
+        </div>
+    </div>
+</div>

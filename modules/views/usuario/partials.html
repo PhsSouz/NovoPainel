@@ -1,0 +1,100 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" placeholder="Nome" ng-model="ctrl.usuario.nome" id="nome">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="sobre">Sobrenome</label>
+            <input type="text" class="form-control" placeholder="Sobrenome" ng-model="ctrl.usuario.sobrenome" id="sobre">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text" class="form-control" placeholder="CPF" ng-model="ctrl.usuario.cpf" id="cpf">
+        </div>
+    </div>
+</div> 
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="endereco">Endereço</label>
+            <input type="text" class="form-control" placeholder="Endereço" ng-model="ctrl.usuario.endereco" id="endereco">
+        </div>
+    </div>
+</div> 
+<img src="assets/img/loading.gif" ng-if="ctrl.loader" style="position: absolute;width: 15%;margin: auto 40%;z-index: 2">
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" placeholder="Email" ng-model="ctrl.usuario.email" id="email">
+        </div>
+    </div>
+</div>   
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="text" class="form-control" placeholder="Numero" ng-model="ctrl.usuario.telefone" id="telefone">
+        </div>
+    </div>
+</div>                            
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>
+                <input type="radio" name="radio"  ng-model="ctrl.usuario.tipo" value="3" ng-click="ctrl.click(3)">
+                Dentista
+            </label> &nbsp&nbsp&nbsp           
+            <label>
+                <input type="radio" name="radio" ng-model="ctrl.usuario.tipo" value="2" ng-click="ctrl.click(2)">
+                Secretária
+            </label> &nbsp&nbsp&nbsp           
+            <label>
+                <input type="radio" name="radio" ng-model="ctrl.usuario.tipo" value="1" ng-click="ctrl.click(1)">
+                Cliente
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-if="ctrl.obs">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="obs">Observação</label>
+            <textarea type="text" class="form-control" placeholder="Observação" ng-model="ctrl.usuario.obs" id="obs"></textarea>
+        </div>
+    </div>
+</div> 
+
+<div class="row" ng-if="ctrl.obs">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="nasc">Data de nascimento</label>
+            <input type="date" class="form-control" ng-model="ctrl.usuario.nasc" id="nasc">
+        </div>
+    </div>
+</div>  
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="senha">Senha</label>
+            <input type="password" class="form-control" placeholder="Senha" ng-model="ctrl.usuario.senha" id="senha">
+        </div>
+    </div>
+</div>                            
