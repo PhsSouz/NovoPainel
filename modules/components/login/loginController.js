@@ -22,7 +22,7 @@
 				console.log(response)
 				if(response.data != ''){
 					ValidateLogin.getLogin(response)
-					// window.location.assign("http://localhost/NovoPainel/#!/painel.html")
+					window.location.assign("inicio")
 				}
 				else{
 					swal("Usuário incorreto!", "Email ou senha incorreto, tente novamente");

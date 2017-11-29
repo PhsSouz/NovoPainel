@@ -79823,7 +79823,7 @@ process.umask = function() { return 0; };
 		function deslogar() {
 			LoginService.destroySession().then(function (response) {
 				ValidateLogin.deleteLogin(response);
-				$state.go('inicio');
+				window.location.assign("http://localhost/NovoPainel/#!/");
 			});
 		}
 	}
@@ -80144,6 +80144,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 			self.loader = true;
 			self.button = false;
 			LoginService.login(data).then(function (response) {
+				console.log(response);
 				if (response.data != '') {
 					ValidateLogin.getLogin(response);
 					window.location.assign("inicio");
@@ -80438,7 +80439,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 			validacao: function Token() {
 				if (_.isEmpty(window.localStorage.getItem('Token')) == true) {
 					swal("Ops!", "Entre com seu usuário para ter acesso ao sistema!").then(function (value) {
-						$state.go('inicio');
+						window.location.assign("http://localhost/NovoPainel");
 					});
 				}
 			},

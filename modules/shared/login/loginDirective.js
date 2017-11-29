@@ -16,7 +16,7 @@
 					if(_.isEmpty(window.localStorage.getItem('Token')) == true){
 						swal("Ops!", "Entre com seu usuário para ter acesso ao sistema!")
 							.then((value) => {
-								$state.go('inicio')
+								window.location.assign("http://localhost/NovoPainel")
 							}
 						);
 					}
