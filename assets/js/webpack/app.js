@@ -79942,8 +79942,6 @@ process.umask = function() { return 0; };
 				var data = new Date(self.consulta.con_data);
 
 				self.consulta.con_data = data;
-
-				console.log(self.consulta);
 			});
 		}
 
