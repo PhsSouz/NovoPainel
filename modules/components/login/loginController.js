@@ -19,9 +19,10 @@
 			self.loader 	=	true
 			self.button 	=	false
 			LoginService.login(data).then(function(response){
+				console.log(response)
 				if(response.data != ''){
 					ValidateLogin.getLogin(response)
-					window.location.assign("inicio")
+					// window.location.assign("http://localhost/NovoPainel/#!/painel.html")
 				}
 				else{
 					swal("Usuário incorreto!", "Email ou senha incorreto, tente novamente");

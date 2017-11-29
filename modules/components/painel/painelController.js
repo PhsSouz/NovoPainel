@@ -19,7 +19,7 @@
 			LoginService.destroySession()
 				.then(function(response){
 					ValidateLogin.deleteLogin(response)
-					window.location.assign("http://ec2-18-221-162-195.us-east-2.compute.amazonaws.com/NovoPainel/#!/")
+					window.location.assign("http://localhost/NovoPainel/#!/")
 				}
 			)
 		}

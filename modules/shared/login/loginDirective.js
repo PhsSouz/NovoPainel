@@ -10,13 +10,13 @@
 	      	}
 	    })
 
-		.factory('ValidateLogin', function($http, Validation){
+		.factory('ValidateLogin', function($http, Validation, $state){
 		  	return {
 				validacao: function Token(){
 					if(_.isEmpty(window.localStorage.getItem('Token')) == true){
 						swal("Ops!", "Entre com seu usuário para ter acesso ao sistema!")
 							.then((value) => {
-								window.location.assign("http://ec2-18-221-162-195.us-east-2.compute.amazonaws.com/NovoPainel/#!/")
+								$state.go('inicio')
 							}
 						);
 					}

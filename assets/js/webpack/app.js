@@ -79823,7 +79823,7 @@ process.umask = function() { return 0; };
 		function deslogar() {
 			LoginService.destroySession().then(function (response) {
 				ValidateLogin.deleteLogin(response);
-				window.location.assign("http://localhost/NovoPainel/#!/");
+				$state.go('inicio');
 			});
 		}
 	}
@@ -80146,7 +80146,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 			LoginService.login(data).then(function (response) {
 				if (response.data != '') {
 					ValidateLogin.getLogin(response);
-					window.location.assign("http://localhost/NovoPainel/painel.html");
+					window.location.assign("inicio");
 				} else {
 					swal("Usuário incorreto!", "Email ou senha incorreto, tente novamente");
 					self.loader = false;
@@ -80433,12 +80433,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 		return {
 			templateUrl: 'modules/views/login/index.html'
 		};
-	}).factory('ValidateLogin', function ($http, Validation) {
+	}).factory('ValidateLogin', function ($http, Validation, $state) {
 		return {
 			validacao: function Token() {
 				if (_.isEmpty(window.localStorage.getItem('Token')) == true) {
 					swal("Ops!", "Entre com seu usuário para ter acesso ao sistema!").then(function (value) {
-						window.location.assign("http://localhost/github/Painel/#!/");
+						$state.go('inicio');
 					});
 				}
 			},
