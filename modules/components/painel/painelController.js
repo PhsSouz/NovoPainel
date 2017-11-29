@@ -19,7 +19,7 @@
 			LoginService.destroySession()
 				.then(function(response){
 					ValidateLogin.deleteLogin(response)
-					window.location.assign("http://localhost/github/Painel/#!/")
+					window.location.assign("http://localhost/NovoPainel/#!/")
 				}
 			)
 		}

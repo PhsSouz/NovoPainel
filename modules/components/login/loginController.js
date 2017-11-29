@@ -21,7 +21,7 @@
 			LoginService.login(data).then(function(response){
 				if(response.data != ''){
 					ValidateLogin.getLogin(response)
-					window.location.assign("inicio")
+					window.location.assign("http://localhost/NovoPainel/painel.html")
 				}
 				else{
 					swal("Usuário incorreto!", "Email ou senha incorreto, tente novamente");
