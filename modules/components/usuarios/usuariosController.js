@@ -102,6 +102,7 @@
 					if(self.usuario.tipo == 1){
 						self.obs =	true
 					}
+					
 				}
 			)
 		}

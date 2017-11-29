@@ -14,7 +14,7 @@
     $consulta->setRetorno($data->con_retorno);
     $consulta->setDentista($data->Dentista_ID);
     $consulta->setEspec($data->Dentista_Especialidade_ID);
-    $consulta->setIdpac($data->pac_idPac);
+    $consulta->setIdpac($data->id_user_id);
 
     $atualizar = new Consulta();
 

@@ -187,6 +187,29 @@
             }
         }        
 
+        public function ListarUsuario(ModelUsuario $usuario) {
+
+            try {
+
+                $stm = Conexao::getInstance()->prepare('SELECT * FROM Usuario WHERE id = :id');
+
+                $stm->bindValue(":id",  $usuario->getId());
+
+                $stm->execute();
+
+                $arrValues = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+                header('Content-Type: application/json');
+
+                return json_encode($arrValues);
+            } 
+            catch (Exception $e) {
+                echo $e->getMessage();
+                print "Ocorreu um erro ao tentar executar esta ação.";
+            }    
+            
+        }
+
         public function listarPacientes(ModelUsuario $usuario) {
 
             try {

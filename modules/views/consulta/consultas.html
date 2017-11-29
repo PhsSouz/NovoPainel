@@ -1,11 +1,4 @@
 <div ng-controller="consultasController as ctrl">
-    <div class="row">
-        <div class="col-md-12">                
-            <div class="card">
-                <menu></menu>
-            </div>
-        </div>
-    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">                
@@ -38,9 +31,9 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="(key, item) in ctrl.arrCons">
-                                    <td>{{ item.pac_idPac }}</td>
+                                    <td>{{ item.id_user_id }}</td>
                                     <td>{{ item.Dentista_ID }}</td>
-                                    <td>{{ item.con_data }}</td>
+                                    <td>{{ item.con_data | date : "dd/MM/y" }}</td>
                                     <td>{{ item.con_hora }}</td>
                                     <td>{{ item.con_retorno }}</td>
                                     <td>{{ item.con_tipo }}</td>

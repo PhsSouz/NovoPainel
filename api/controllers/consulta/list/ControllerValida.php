@@ -1,20 +1,23 @@
 <?php
-
     require_once("../../../models/consulta/ModelConsulta.php");
     require_once("../../../models/consulta/DAO.php");
 
     $data = json_decode(file_get_contents("php://input"));
 
+
+    $explode = explode("-", $data->con_data);
+
+    $dia = explode("T", $explode[2]);
+
+
+    $ano = $explode[0].'-'.$explode[1].'-'.$dia[0];
+
     $consulta = new ModelConsulta();
 
-    $consulta->setData($data->con_data);
+    $consulta->setData($ano);
     $consulta->setHora($data->con_hora);
-    $consulta->setTipo($data->con_tipo);
-    $consulta->setRetorno($data->con_retorno);
     $consulta->setDentista($data->Dentista_ID);
-    $consulta->setEspec($data->Dentista_Especialidade_ID);
-    $consulta->setIdpac($data->id_user_id);
 
     $cadastro = new Consulta();
 
-    echo $cadastro->Cadastrar($consulta);
+    echo $cadastro->ValidaConsulta($consulta);

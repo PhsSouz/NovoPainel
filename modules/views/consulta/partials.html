@@ -43,8 +43,8 @@
         <div class="form-group">
             <label for="dentista">Dentista</label>
             <select class="form-control" placeholder="Tipo" id="dentista" ng-model="ctrl.consulta.Dentista_ID">
-                <option ng-value="item.Usuario_idUsuario" ng-repeat="item in ctrl.arrDent">
-                    {{ item.dentist_nome }}
+                <option ng-value="item.id" ng-repeat="item in ctrl.arrDent">
+                    {{ item.nome }}
                 </option>
             </select>
         </div>
@@ -69,9 +69,9 @@
     <div class="col-md-12">
         <div class="form-group">
             <label for="pac">Paciente</label>
-            <select class="form-control" id="pac" ng-model="ctrl.consulta.pac_idPac">
-                <option ng-value="item.idPac" ng-repeat="item in ctrl.arrPas">
-                    {{ item.pac_nome }}
+            <select class="form-control" id="pac" ng-model="ctrl.consulta.id_user_id">
+                <option ng-value="item.id" ng-repeat="item in ctrl.arrPas">
+                    {{ item.nome }}
                 </option>
             </select>
         </div>

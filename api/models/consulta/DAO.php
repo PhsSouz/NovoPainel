@@ -38,7 +38,7 @@
         public function ListarPaciente() {
             try {
 
-                $stm = Conexao::getInstance()->prepare('SELECT * FROM Paciente');
+                $stm = Conexao::getInstance()->prepare('SELECT * FROM Usuario WHERE tipo = 1');
 
                 $stm->execute();
 
@@ -56,7 +56,7 @@
         public function ListarDentista() {
             try {
 
-                $stm = Conexao::getInstance()->prepare('SELECT * FROM Dentista');
+                $stm = Conexao::getInstance()->prepare('SELECT * FROM Usuario WHERE tipo = 3');
 
                 $stm->execute();
 
@@ -98,7 +98,7 @@
                     con_retorno,
                     Dentista_ID, 
                     Dentista_Especialidade_ID,
-                    pac_idPac)
+                    id_user_id)
                     VALUES (
                     :data,
                     :hora,
@@ -216,5 +216,28 @@
                 echo $e->getMessage();
                 print "Ocorreu um erro ao tentar executar esta ação";
             }
+        }
+
+        public function ValidaConsulta(ModelConsulta $consulta) {
+            try {
+
+                $stm = Conexao::getInstance()->prepare('SELECT * FROM Consulta WHERE con_hora = :hora && con_data = :data && Dentista_ID = :dentista');
+
+                $stm->bindValue(":data",      $consulta->getData());
+                $stm->bindValue(":hora",      $consulta->getHora());
+                $stm->bindValue(":dentista",  $consulta->getDentista());
+
+                $stm->execute();
+
+                $arrValues = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+                header('Content-Type: application/json');
+
+                return json_encode($arrValues);
+            } 
+            catch (Exception $e) {
+                echo $e->getMessage();
+                print "Ocorreu um erro ao tentar executar esta ação.";
+            } 
         }  
     }

@@ -6,6 +6,7 @@
 	let pathPasc 	= 'ControllerPaciente.php'
 	let pathDent 	= 'ControllerDentista.php'
 	let pathEspec 	= 'ControllerEspec.php'
+	let pathValida 	= 'ControllerValida.php'
 
 	angular
 		.module('myApp').factory('ConsultaService', function($http){
@@ -77,6 +78,13 @@
 					return $http({
 						method: 'POST',
 						url: 'api/controllers/consulta/aut/'+path,
+						data: data
+					})
+			    },			    
+			    validaConculta : function(data){
+					return $http({
+						method: 'POST',
+						url: 'api/controllers/consulta/list/'+pathValida,
 						data: data
 					})
 			    },

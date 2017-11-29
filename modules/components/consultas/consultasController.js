@@ -55,19 +55,26 @@
 		}
 
 		function cadastrar(consulta){
-			ConsultaService.create(consulta)
-			.then(function(especialidades){
-				if(especialidades.data == 200){
-					swal({
-						title: "Consulta cadastrada com sucesso!",
-						text: "Clique em Ok para continuar!",
-						icon: "success",
-						button: "Ok!",
-					}).then((value) => {
-						$state.go('consultas')
-					})
+			ConsultaService.validaConculta(consulta)
+			.then(function(response){
+				if(response.data != ''){
+					swal("Consulta não cadastrada!", "Dentista ja tem uma consulta cadastratada nesta data.");
 				}else{
-					swal("Consulta não cadastrada!", "Tente novamente.");
+					ConsultaService.create(consulta)
+					.then(function(especialidades){
+						if(especialidades.data == 200){
+							swal({
+								title: "Consulta cadastrada com sucesso!",
+								text: "Clique em Ok para continuar!",
+								icon: "success",
+								button: "Ok!",
+							}).then((value) => {
+								$state.go('consultas')
+							})
+						}else{
+							swal("Consulta não cadastrada!", "Tente novamente.");
+						}
+					})
 				}
 			})
 		}
@@ -106,6 +113,10 @@
 			ConsultaService.edit($state.params.id)
 				.then(function(response){
 					self.consulta = response.data[0]
+
+					let data = new Date(self.consulta.con_data)
+
+					self.consulta.con_data = data
 				}
 			)
 		}
