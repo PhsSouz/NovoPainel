@@ -21,7 +21,7 @@
 			LoginService.login(data).then(function(response){
 				if(response.data != ''){
 					ValidateLogin.getLogin(response)
-					window.location.assign("http://localhost/NovoPainel/painel.html")
+					window.location.assign("http://ec2-18-221-162-195.us-east-2.compute.amazonaws.com/NovoPainel/painel.html")
 				}
 				else{
 					swal("Usuário incorreto!", "Email ou senha incorreto, tente novamente");
