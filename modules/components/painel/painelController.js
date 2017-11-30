@@ -19,7 +19,7 @@
 			LoginService.destroySession()
 				.then(function(response){
 					ValidateLogin.deleteLogin(response)
-					window.location.assign("http://tecnologiasincriveis.com/NovoPainel")
+					window.location("http://tecnologiasincriveis.com/NovoPainel")
 				}
 			)
 		}
