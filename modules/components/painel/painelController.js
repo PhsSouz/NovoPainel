@@ -19,8 +19,6 @@
 			LoginService.destroySession()
 				.then(function(response){
 					ValidateLogin.deleteLogin(response)
-					alert('ok')
-					window.open("http://tecnologiasincriveis.com/NovoPainel/#!/")
 				}
 			)
 		}
