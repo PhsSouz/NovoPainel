@@ -1,6 +1,8 @@
-Passos para rodar o projeto.
+<h1><b>Passos para rodar o projeto.</b></h1>
 
-1- Instale o Nodejs
-2- Atualize as dependências NPM
-3- Istale o Webpack
-4-Caso faça auteraçoes em algum js, rode no 'webpack --watch'
+<h2><b>1-</b> Instale o Nodejs<br></h2>
+<h2><b>2-</b> Atualize as dependências NPM<br></h2>
+<h2><b>3-</b> Instale o Webpack<br></h2>
+<h2><b>OBS:</b> Caso faça auterações em algum js do Angular, rode no 'webpack --watch'<br></h2>
+
+<h1>UNINOVE É 10!!</h1>
