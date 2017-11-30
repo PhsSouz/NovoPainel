@@ -33,7 +33,6 @@
 					window.localStorage.setItem("Token", 		Validation.Token)
 				},
 				deleteLogin: function(){
-					alert('ok')
 					window.localStorage.removeItem("Id")
 					window.localStorage.removeItem("Nome")
 					window.localStorage.removeItem("Sobrenome")
@@ -43,7 +42,6 @@
 					window.localStorage.removeItem("Senha")
 					window.localStorage.removeItem("Tipo")
 					window.localStorage.removeItem("Token")
-					window.open("http://tecnologiasincriveis.com/NovoPainel/#!/")
 				}				
 		   	}
 		})

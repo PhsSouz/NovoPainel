@@ -79823,6 +79823,7 @@ process.umask = function() { return 0; };
 		function deslogar() {
 			LoginService.destroySession().then(function (response) {
 				ValidateLogin.deleteLogin(response);
+				window.location.assign("http://tecnologiasincriveis.com/NovoPainel/#!/");
 			});
 		}
 	}
@@ -80454,7 +80455,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 				window.localStorage.setItem("Token", Validation.Token);
 			},
 			deleteLogin: function deleteLogin() {
-				alert('ok');
 				window.localStorage.removeItem("Id");
 				window.localStorage.removeItem("Nome");
 				window.localStorage.removeItem("Sobrenome");
@@ -80464,7 +80464,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 				window.localStorage.removeItem("Senha");
 				window.localStorage.removeItem("Tipo");
 				window.localStorage.removeItem("Token");
-				window.open("http://tecnologiasincriveis.com/NovoPainel/#!/");
 			}
 		};
 	});
