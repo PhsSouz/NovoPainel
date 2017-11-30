@@ -79823,7 +79823,8 @@ process.umask = function() { return 0; };
 		function deslogar() {
 			LoginService.destroySession().then(function (response) {
 				ValidateLogin.deleteLogin(response);
-				window.location.assign("http://tecnologiasincriveis.com/NovoPainel/#!/");
+				alert('ok');
+				window.open("http://tecnologiasincriveis.com/NovoPainel/#!/");
 			});
 		}
 	}
