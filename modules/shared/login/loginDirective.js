@@ -16,7 +16,7 @@
 					if(_.isEmpty(window.localStorage.getItem('Token')) == true){
 						swal("Ops!", "Entre com seu usuário para ter acesso ao sistema!")
 							.then((value) => {
-								window.location.assign("http://tecnologiasincriveis.com/NovoPainel")
+								window.location.assign("http://tecnologiasincriveis.com/NovoPainel/#!/")
 							}
 						);
 					}
